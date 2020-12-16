@@ -1,0 +1,248 @@
+.mytext2 {
+    margin-top: 40px;
+    color: red;
+    display: none;
+}
+
+.inputsx2 {
+    margin-bottom: 1rem;
+}
+
+.identorx1 {
+    margin-bottom: 1.5rem;
+}
+
+.identorx2 {
+    padding-bottom: 9rem;
+}
+
+.identorx3 {
+    padding-bottom: 12.4rem;
+}
+
+.test2x {
+    width: 100%;
+    text-align: center;
+}
+
+.test3x {
+    width: 100%;
+    text-align: center;
+    float: left;
+}
+
+.card-body input {
+    margin-bottom: 1rem;
+}
+
+.txcd2 {
+    margin-top: 1%!important;
+}
+
+.txcd3 {
+    font-size: 13px;
+}
+
+.form small {
+    color: rgb(150, 18, 18);
+    font-size: 75%;
+}
+
+.fgvz {
+    margin-bottom: 1%!important;
+}
+
+thead {
+    background-color: #393939;
+}
+
+th {
+    color: #a9adab;
+    min-width: 60px!important;
+}
+
+.table-bordered td, .table-bordered th {
+    border: 0;
+}
+
+.table-bordered td {
+    background-color: #222222;
+    color: #80807D;
+}
+
+.table thead th {
+    border-bottom: 0;
+    
+}
+
+.table {
+    margin-bottom: 0!important;
+}
+
+.card-body {
+    padding: 0!important;
+}
+.x444{
+    padding: 1rem .5rem!important;
+}
+
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0;
+    /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+    /* Firefox */
+}
+.div-656587{
+    display: flex;
+}
+.container222 {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    position: fixed;
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    background: rgba(0,0,0,0.6);
+    z-index: 1050;
+}
+
+.my-class-22 {
+    width: 100%;
+    text-align: center;
+}
+
+.my-class-22 input {
+    max-width: 350px;
+    display: initial!important;
+}
+
+.my-class-23 {
+    max-width: 350px;
+    display: initial!important;
+}
+.xvee2 {
+    height: 1.5rem!important;
+    width: 1.5rem!important;
+    margin-right: 5px!important;
+}
+.archs{
+    float: right;
+    margin: 0;
+    height: 25px;
+}
+  .center-loader{
+    top: 50%;
+    position: absolute;
+  }
+
+@media screen and (max-width: 954px) {
+    .trf {
+        margin-right: 0!important;
+        font-size: 15px!important;
+    }
+    .pulo-de-linha {
+        display: inherit!important;
+    }
+}
+
+@media screen and (max-width: 896px) and (min-width: 560px) {
+    .fggx {
+        margin-right: 0!important;
+    }
+}
+
+@media screen and (max-width: 613px) {
+    .xvee2{
+        float: left!important;
+        margin-right: 0!important;
+        margin-left: 5px!important;
+    }
+    .search2, .trf {
+        float: left!important;
+        margin-right: 5px!important;
+    }
+    .txcd223 {
+        float: left!important;
+    }
+    .xxd2 {
+        margin-left: 0!important;
+        margin-top: 1%;
+    }
+    .archs {
+        float: left!important;
+        height: 20px!important;
+    }
+    .archs2{
+        margin-top: 30px!important;
+    }
+   
+}
+
+
+
+@media screen and (max-width: 530px) {
+    .xtr {
+        color: transparent;
+    }
+    .x65321 {
+        font-size: .65rem;
+    }
+    .pl-4, .px-4 {
+        padding: 0.4rem!important;
+    }
+}
+
+@media screen and (max-width: 330px) {
+    .btn-icon-split .icon {
+        display: none;
+    }
+    .my-class-23 {
+        display: none!important;
+    }
+    .my-class-24 {
+        display: inherit!important;
+    }
+}
+
+@media screen and (max-width: 285px) {
+    .sidebar .nav-item .collapse .collapse-inner, .sidebar .nav-item .collapsing .collapse-inner {
+        font-size: .65rem;
+    }
+    .xxd2 {
+        width: 62px!important;
+        font-size: 10px!important;
+        margin-right: 0!important;
+    }
+}
+
+@media screen and (max-width: 264px) {
+    .trf {
+        font-size: 14px!important;
+        max-width: 60px;
+    }
+    .btn-icon-split .text {
+        font-size: 10px!important;
+        padding: .375rem 1px;
+    }
+    .sidebar .nav-item .collapse .collapse-inner .collapse-item, .sidebar .nav-item .collapsing .collapse-inner .collapse-item {
+        padding: 8px 1px;
+        margin: 0;
+    }
+    .sidebar .nav-item .collapse .collapse-inner, .sidebar .nav-item .collapsing .collapse-inner {
+        min-width: 0!important;
+        font-size: .65rem;
+    }
+    .inputsx2 {
+        max-width: 60px;
+    }
+}
