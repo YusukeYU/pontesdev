@@ -23,7 +23,7 @@
 
 
 </head>
-<div class="div-656587">
+<div id ="loading-image" class="div-656587">
     <div class="container222" id="whole_page_loader">
         <img class="center-loader" style="height:17px!important;" src="{{ asset('assets/img/ajax-loader.gif') }}" />
     </div>

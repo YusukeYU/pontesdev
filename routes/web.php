@@ -10,9 +10,9 @@ use App\Models\User;
  * Rotas Principais
  */
 Route::group(['namespace' => 'App\Http\Controllers'], function () {
-    Route::get('/', function(){
+    Route::get('/',  function(){
         return view('admin.pages.startPages.index');
-    });
+    })->name('pontesdev');
     Route::get('/login',  function(){
         return view('admin.pages.startPages.login');
     })->name('login');

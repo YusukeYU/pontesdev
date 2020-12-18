@@ -87,6 +87,39 @@ hr {
   height: 0;
   overflow: visible;
 }
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0;
+  /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+  /* Firefox */
+}
+.div-656587{
+  display: flex;
+}
+.container222 {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: fixed;
+  display: none;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  background: rgba(0,0,0,0.6);
+  z-index: 1050;
+}
+.center-loader{
+  top: 50%;
+  position: absolute;
+}
 
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;

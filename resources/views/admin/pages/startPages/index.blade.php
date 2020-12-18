@@ -20,9 +20,11 @@
 </head>
 
 <body id="page-top">
-    @if(isset($sent_failed))
-      <script>alert('Verifique os dados digitados e tente novamente!')</script>
-     @endif
+    <div class="div-656587">
+        <div class="container222" id="whole_page_loader">
+            <img class="center-loader" style="height:17px!important;" src="{{ asset('assets/img/ajax-loader.gif') }}" />
+        </div>
+    </div>
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
@@ -143,13 +145,8 @@
             <div class="text-center">
                 <h2 class="section-heading text-uppercase">Fale Conosco</h2>
                 <h3 class="section-subheading text-muted">Envie sua dúvida ou solicitação de orçamento!</h3>
-                @if($errors->any())
-                    @foreach ($errors->all() as $error)
-                        <p style="color: red">{{ $error }} </p>
-                    @endforeach
-                @endif
             </div>
-            <form action = "{{ route('leads.store') }}" method="POST" id="contactForm">
+            <form id="contactForm">
               @csrf 
                 <div class="row align-items-stretch mb-5">
                     <div class="col-md-6">
@@ -213,6 +210,9 @@
     <script src="assets/mail/jqBootstrapValidation.js"></script>
     <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
+
+    <script src="{{ asset('js/myscripts.js') }}"></script>
+
 </body>
 
 </html>
