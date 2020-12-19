@@ -31,7 +31,9 @@
                               <th>Telefone</th>
                               <th>Mensagem</th>
                               <th>Data</th>
+                              @if(auth()->user()->admin_user == 1)
                               <th> </th>
+                              @endif
                             </tr>
                           </thead>
                           <tbody>
@@ -44,7 +46,7 @@
                             <td>{{ $lead->msg_lead }}</td>
                             <td>{{    
                               $day = substr($lead->created_at, 8, -9).'/'.substr($lead->created_at,5, -12).'/'.substr($lead->created_at,0, -15).' às '.substr($lead->created_at,11)}}</td>
-                            
+                            @if(auth()->user()->admin_user == 1)
                             <td>     
                                 <form action="{{ route('leads.destroy', $lead->id_lead) }}" method="POST">
                                     @method('DELETE')
@@ -54,6 +56,7 @@
                                     </button>
                                 </form>
                             </td>
+                            @endif
                           </tr> 
                           @endforeach
                         </tbody>

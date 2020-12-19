@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Lead;
 use App\Http\Requests\Lead\StoreLeadRequest;
+use App\Http\Requests\Lead\DeleteLeadRequest;
 
 class LeadController extends Controller
 {
@@ -40,7 +41,9 @@ class LeadController extends Controller
     }
     public function destroy($id)
     {
-        Lead::destroy($id);
+        if(auth()->user()->admin_user ==1){
+            Lead::destroy($id);
+        }  
         return redirect()->route('leads.index');
     }
 }

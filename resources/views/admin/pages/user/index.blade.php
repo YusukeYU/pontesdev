@@ -30,8 +30,10 @@
                                 <th>Nome</th>
                                 <th>E-mail</th>
                                 <th>Admin</th>
+                                @if(auth()->user()->admin_user == 1)
                                 <th> </th>
                                 <th> </th>
+                                @endif
                             </tr>
                         </thead>
                         <tbody>
@@ -45,6 +47,7 @@
                                     @else
                                         <td> Sim </td>
                                     @endif
+                                    @if(auth()->user()->admin_user == 1)
                                     <td>
                                         <form action="{{ route('users.destroy', $user->id_user) }}" method="POST">
                                             @method('DELETE')
@@ -62,6 +65,7 @@
                                             </button>
                                         </form>
                                     </td>
+                                    @endif
                                 </tr>
                             @endforeach
                         </tbody>

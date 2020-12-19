@@ -17,7 +17,6 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
         return view('admin.pages.startPages.login');
     })->name('login');
     Route::get('/test',  function(){
-       // User::factory()->count(30)->create(); 
     });
     Route::post('/login',['uses' => 'LoginController@authenticate']);
 

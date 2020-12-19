@@ -23,9 +23,6 @@
                         <input type="text" name="name" id='name' class="inputsx2" maxlength="60"
                             value="{{ $user[0]->name_user }}">
 
-                        <h6 class="m-0 font-weight-bold text-primary">E-mail</h6>
-                        <input type="email" name="email" class="inputsx2" value="{{ $user[0]->email_user }} ">
-
                         <h6 class="m-0 font-weight-bold text-primary">Admin</h6>
                         @if ($user[0]->admin_user == 0)
                             <select class="inputsx2" name="admin" id="admin">
@@ -34,7 +31,9 @@
                             </select>
                         @else
                             <select class="inputsx2" name="admin" id="admin">
+                                @if(auth()->user()->admin_user == 1)
                                 <option value="1"> Sim </option>
+                                @endif
                                 <option value="0"> Não </option>
                             </select>
                         @endif

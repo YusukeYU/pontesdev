@@ -27,7 +27,9 @@
                         <h6 class="m-0 font-weight-bold text-primary">Admin</h6>
                             <select class="inputsx2" name="admin" id="admin">
                                 <option value="0"> Não </option>
+                                @if(auth()->user()->admin_user == 1)
                                 <option value="1"> Sim </option>
+                                @endif
                             </select>
 
                             <h6 class="m-0 font-weight-bold text-primary">Senha</h6>

@@ -46,17 +46,21 @@ class UserController extends Controller
 
     public function update(EditUserRequest $request, $id)
     {
-        $user = User::find($id);
-        $user->name_user = $request->name;
-        $user->email_user = $request->email;
-        $user->admin_user = (int)$request->admin;
-        $user->save();
+        if(auth()->user()->admin_user == 1){
+            $user = User::find($id);
+            $user->name_user = $request->name;
+            $user->admin_user = (int)$request->admin;
+            $user->save();
+        }
+       
         return redirect()->route('users.index');
     }
 
     public function destroy($id)
     {
-        User::destroy($id);
+        if(auth()->user()->admin_user == 1){
+            User::destroy($id);
+        }
         return redirect()->route('users.index');
     }
     public function main()

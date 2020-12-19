@@ -25,7 +25,7 @@ class StoreUserRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'email' => 'required|email',
+            'email' => 'required|email|unique:users,email_user',
             'admin' => 'required',
             'password' => 'required|min:12',
         ];
@@ -36,6 +36,7 @@ class StoreUserRequest extends FormRequest
             'name.required' => 'Informe um nome válido!',
             'email.required' => 'Informe um e-mail válido!',
             'email.email' => 'Informe um e-mail válido!',
+            'email.unique' => 'E-mail já cadastrado!',
             'admin.required' => 'Informe a permissão de admin!',
             'password.required' => 'Informe uma senha válida!',
             'password.min' => 'Informe uma senha com no mínimo 12 dígitos!',

@@ -25,7 +25,6 @@ class EditUserRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'email' => 'required|email',
             'admin' => 'required',
         ];
     }
@@ -33,8 +32,6 @@ class EditUserRequest extends FormRequest
     {
         return [
             'name.required' => 'Nome é obrigatório',
-            'email.required' => 'Informe um e-mail válido',
-            'email.email' => 'Informe um e-mail válido',
             'admin.required' => 'Informe a permissão de admin'
         ];
     }
