@@ -13,12 +13,14 @@ class CreateServicesTable extends Migration
      */
     public function up()
     {
-        Schema::create('services', function (Blueprint $table) {
-            $table->id('id_service');
-            $table->string('name_service',50);
-            $table->decimal('price_service',8,2);
-            $table->string('description_service',50);
-        });
+        if (!Schema::hasTable('services')) {
+            Schema::create('services', function (Blueprint $table) {
+                $table->id('id_service');
+                $table->string('name_service', 50);
+                $table->decimal('price_service', 8, 2);
+                $table->string('description_service', 50);
+            });
+        }
     }
 
     /**

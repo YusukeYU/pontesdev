@@ -13,14 +13,16 @@ class CreateLeadsTable extends Migration
      */
     public function up()
     {
-        Schema::create('leads', function (Blueprint $table) {
-            $table->id('id_lead');
-            $table->string('name_lead',50);
-            $table->string('email_lead',120);
-            $table->string('phone_lead',15);
-            $table->string('msg_lead',254);
-            $table->timestamps();
-        });
+        if (!Schema::hasTable('leads')) {
+            Schema::create('leads', function (Blueprint $table) {
+                $table->id('id_lead');
+                $table->string('name_lead',50);
+                $table->string('email_lead',120);
+                $table->string('phone_lead',15);
+                $table->string('msg_lead',254);
+                $table->timestamps();
+            });
+        } 
     }
 
     /**

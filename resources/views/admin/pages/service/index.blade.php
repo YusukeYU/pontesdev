@@ -25,7 +25,7 @@
                         style="text-align: center">
                         <thead>
                             <tr>
-                              <th>Registro</th>
+                              <th>Id</th>
                               <th>Nome</th>
                               <th>Valor</th>
                               <th>Descrição</th>
