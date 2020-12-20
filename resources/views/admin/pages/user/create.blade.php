@@ -22,7 +22,7 @@
                         <input type="text" name="name" id='name' class="inputsx2" maxlength="60" value ="{{old("name")}}">
 
                         <h6 class="m-0 font-weight-bold text-primary">E-mail</h6>
-                        <input type="email" name="email" class="inputsx2" value ="{{old("email")}}">
+                        <input type="text" name="email" class="inputsx2" value ="{{old("email")}}">
 
                         <h6 class="m-0 font-weight-bold text-primary">Admin</h6>
                             <select class="inputsx2" name="admin" id="admin">

@@ -36,7 +36,7 @@ class ServiceController extends Controller
     }
     public function show($id)
     {
-        return redirect()->route('users.index');
+        return redirect()->route('services.index');
     }
     public function edit($id)
     {

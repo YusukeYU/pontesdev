@@ -25,7 +25,7 @@ class EditServiceRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'price' => 'required|numeric|digits_between:1,6',
+            'price' => 'required|max:8',
             'description' => 'required',
         ];
     }
@@ -34,8 +34,7 @@ class EditServiceRequest extends FormRequest
         return [
             'name.required' => 'Informe um nome válido!',
             'price.required' => 'Informe um valor válido!',
-            'price.numeric' => 'Informe um valor númerico!',
-            'price.digits_between' => 'Informe um valor menor!',
+            'price.max' => 'Informe um valor menor!',
             'description.required' => 'Informe uma descrição válida!'
            
         ];

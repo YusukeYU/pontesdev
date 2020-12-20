@@ -24,7 +24,7 @@ class StoreUserRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
+            'name' => 'required|min:4',
             'email' => 'required|email|unique:users,email_user',
             'admin' => 'required',
             'password' => 'required|min:12',
@@ -34,6 +34,7 @@ class StoreUserRequest extends FormRequest
     {
         return [
             'name.required' => 'Informe um nome válido!',
+            'name.min' => 'Nome informado muito curto!',
             'email.required' => 'Informe um e-mail válido!',
             'email.email' => 'Informe um e-mail válido!',
             'email.unique' => 'E-mail já cadastrado!',

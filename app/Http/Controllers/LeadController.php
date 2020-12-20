@@ -8,6 +8,10 @@ use App\Http\Requests\Lead\StoreLeadRequest;
 
 class LeadController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth', ['except' => 'store']);
+    }
     public function index()
     {
         return view('admin.pages.lead.index', ['MyUser' =>'','MyUserPhoto' => 0,'leads' => Lead::select()->orderByDesc('created_at')->simplePaginate(4)]);

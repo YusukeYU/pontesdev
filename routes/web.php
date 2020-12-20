@@ -31,7 +31,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
 
 Route::resource('/dashboard/users',UserController::class)->middleware('auth');
 
-Route::resource('/dashboard/leads',LeadController::class)->middleware('auth');
+Route::resource('/dashboard/leads',LeadController::class);
 
 Route::resource('/dashboard/services',ServiceController::class)->middleware('auth');
 

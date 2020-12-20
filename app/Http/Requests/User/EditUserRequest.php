@@ -24,7 +24,7 @@ class EditUserRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
+            'name' => 'required|min:4',
             'admin' => 'required',
         ];
     }
@@ -32,6 +32,7 @@ class EditUserRequest extends FormRequest
     {
         return [
             'name.required' => 'Nome é obrigatório',
+            'name.min' => 'Nome informado muito curto!',
             'admin.required' => 'Informe a permissão de admin'
         ];
     }
