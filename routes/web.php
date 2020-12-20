@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\LeadController;
-use App\Models\User;
+use App\Http\Controllers\ServiceController;
 
 
 /**
@@ -17,6 +17,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
         return view('admin.pages.startPages.login');
     })->name('login');
     Route::get('/test',  function(){
+      //  Service::factory()->count(30)->create(); 
     });
     Route::post('/login',['uses' => 'LoginController@authenticate']);
 
@@ -32,6 +33,8 @@ Route::resource('/dashboard/users',UserController::class)->middleware('auth');
 
 Route::resource('/dashboard/leads',LeadController::class)->middleware('auth');
 
+Route::resource('/dashboard/services',ServiceController::class)->middleware('auth');
+
 
 /**
  * Rotas Para pesquisas alternativas por nome.
@@ -39,4 +42,5 @@ Route::resource('/dashboard/leads',LeadController::class)->middleware('auth');
 Route::group(['namespace' => 'App\Http\Controllers'], function () {
     Route::post('/dashboard/users/find',['uses' => 'UserController@find'])->name('find-user')->middleware('auth');
     Route::post('/dashboard/leads/find',['uses' => 'LeadController@find'])->name('find-lead')->middleware('auth');
+    Route::post('/dashboard/services/find',['uses' => 'ServiceController@find'])->name('find-service')->middleware('auth');
 });

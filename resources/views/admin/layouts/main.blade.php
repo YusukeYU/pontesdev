@@ -78,8 +78,8 @@
                 </a>
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="/admin/services">Serviços cadastrados</a>
-                        <a class="collapse-item" href="/admin/services-add">Cadastrar serviço</a>
+                        <a class="collapse-item" href="/dashboard/services">Serviços cadastrados</a>
+                        <a class="collapse-item" href="/dashboard/services/create">Cadastrar serviço</a>
                     </div>
                 </div>
             </li>

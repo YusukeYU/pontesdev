@@ -14,3 +14,11 @@ $(document).ready(function () {
         $(".container222").css("display", "flex");
     });
 });
+$(document).ready(function() {
+    $("#field").keyup(function() {
+        $("#field").val(this.value.match(/[0-9]*/));
+    });
+    $("#field2").keyup(function() {
+        $("#field2").val(this.value.match(/[0-9]*/));
+    });
+  });

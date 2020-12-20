@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Lead;
 use App\Http\Requests\Lead\StoreLeadRequest;
-use App\Http\Requests\Lead\DeleteLeadRequest;
 
 class LeadController extends Controller
 {
