@@ -12,12 +12,12 @@ class UserController extends Controller
 {
     public function index()
     {    
-        return view('admin.pages.user.index', ['MyUser' =>'','MyUserPhoto' => 0,'users' => User::select()->orderByDesc('id_user')->simplePaginate(5)]);
+        return view('admin.pages.user.index', ['MyUserPhoto' => 0,'users' => User::select()->orderByDesc('id_user')->simplePaginate(5)]);
     }
 
     public function create()
     {
-        return view('admin.pages.user.create',['MyUser' =>'','MyUserPhoto' => 0]);
+        return view('admin.pages.user.create',['MyUserPhoto' => 0]);
     }
 
     public function store(StoreUserRequest $request)
@@ -41,7 +41,7 @@ class UserController extends Controller
         return redirect()->route('users.index');
     }
     public function edit($id){
-        return view('admin.pages.user.edit',['MyUser' =>'','MyUserPhoto' => 0,'user' =>User::where('id_user', $id)->get()]);
+        return view('admin.pages.user.edit',['MyUserPhoto' => 0,'user' =>User::where('id_user', $id)->get()]);
     }
 
     public function update(EditUserRequest $request, $id)
@@ -66,7 +66,7 @@ class UserController extends Controller
     public function main()
     {
         $data = Lead::stats();
-        return view('admin.pages.user.main', ['MyUser' =>'','MyUserPhoto' => 0, 'day' => $data['day'], 'month' => $data['month'], 'year' => $data['year'], 'all' => $data['all']]);
+        return view('admin.pages.user.main', ['MyUserPhoto' => 0, 'day' => $data['day'], 'month' => $data['month'], 'year' => $data['year'], 'all' => $data['all']]);
     }
     
 }

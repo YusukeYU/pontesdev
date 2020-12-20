@@ -112,8 +112,8 @@
                 <div id="collapsePages3" class="collapse" aria-labelledby="headingPages"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="/admin/clients">Todos os clientes</a>
-                        <a class="collapse-item" href="/admin/clients-add">Cadastrar cliente</a>
+                        <a class="collapse-item" href="/dashboard/clients">Todos os clientes</a>
+                        <a class="collapse-item" href="/dashboard/clients/create">Cadastrar cliente</a>
                     </div>
                 </div>
             </li>
@@ -184,13 +184,14 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ $MyUser->name ?? '' }}</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{auth()->user()->name_user ?? '' }}</span>
                                 <img class="img-profile rounded-circle" src=' 
-              @if ($MyUserPhoto === 0)
-              /storage/avatars/default.png
+              @if ($MyUserPhoto == 0)
+              {{asset("assets/img/avatars/default.png")}}'
+              
           @else 
           {{ '/' . $MyUserPhoto }}
-              @endif '>
+              @endif />
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
