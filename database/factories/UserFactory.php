@@ -26,7 +26,8 @@ class UserFactory extends Factory
             'name_user' => $this->faker->name,
             'email_user' => $this->faker->unique()->safeEmail,
             'password_user' => bcrypt('1234'), // password
-            'admin_user' => 0
+            'admin_user' => 0,
+            'photo_user' => 'default.png'
         ];
     }
 }

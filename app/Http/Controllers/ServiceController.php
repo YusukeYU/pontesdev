@@ -11,12 +11,12 @@ class ServiceController extends Controller
 
     public function index()
     {
-        return view('admin.pages.service.index', ['MyUserPhoto' => 0, 'services' => Service::select()->orderBy('name_service')->simplePaginate(4)]);
+        return view('admin.pages.service.index', [ 'services' => Service::select()->orderBy('name_service')->simplePaginate(4)]);
     }
 
     public function create()
     {
-        return view('admin.pages.service.create', ['MyUserPhoto' => 0]);
+        return view('admin.pages.service.create');
     }
 
     public function store(EditServiceRequest $request)
@@ -32,7 +32,7 @@ class ServiceController extends Controller
     {
         $request->validate(['name' => 'required']);
         $services = Service::where('name_service','LIKE', $request->name.'%')->simplePaginate(5);
-        return view('admin.pages.service.index', ['MyUser' =>'','MyUserPhoto' => 0,'services' => $services]);
+        return view('admin.pages.service.index', ['services' => $services]);
     }
     public function show($id)
     {
@@ -40,7 +40,7 @@ class ServiceController extends Controller
     }
     public function edit($id)
     {
-        return view('admin.pages.service.edit', ['MyUserPhoto' => 0, 'service' => Service::where('id_service', $id)->get()]);
+        return view('admin.pages.service.edit', [ 'service' => Service::where('id_service', $id)->get()]);
     }
     public function update(EditServiceRequest $request, $id)
     {

@@ -9,7 +9,7 @@ class ClientController extends Controller
 {
     public function index()
     {
-        return view('admin.pages.client.index', ['MyUserPhoto' => 0,'clients' => Client::select()->orderBy('name_client')->simplePaginate(4)]);
+        return view('admin.pages.client.index', ['clients' => Client::select()->orderBy('name_client')->simplePaginate(4)]);
     }
 
     /**

@@ -6,6 +6,7 @@ use App\Http\Controllers\LeadController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ClientController;
 
+
 /**
  * Rotas Principais
  */
@@ -17,13 +18,21 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
         return view('admin.pages.startPages.login');
     })->name('login');
     Route::get('/test',  function () {
-        // Client::factory()->count(30)->create(); 
+         //User::factory()->count(30)->create();    
     });
     Route::post('/login', ['uses' => 'LoginController@authenticate']);
 
     Route::get('/logout', ['uses' => 'LoginController@logout']);
 
     Route::get('/dashboard/main', ['uses' => 'UserController@main'])->name('main')->middleware('auth');
+
+    Route::get('/dashboard/profile', ['uses' => 'UserController@profile'])->middleware('auth');
+    
+    Route::get('/dashboard/profile/photo', ['uses' => 'UserController@photo'])->middleware('auth');
+
+    Route::post('/dashboard/profile/photo', ['uses' => 'UserController@setPhoto'])->name('user_set_photo')->middleware('auth');
+
+    Route::get('/dashboard/profile/photo/delete', ['uses' => 'UserController@deletePhoto'])->middleware('auth');
 });
 
 /**

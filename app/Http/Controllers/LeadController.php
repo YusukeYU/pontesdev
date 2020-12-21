@@ -14,7 +14,7 @@ class LeadController extends Controller
     }
     public function index()
     {
-        return view('admin.pages.lead.index', ['MyUserPhoto' => 0,'leads' => Lead::select()->orderByDesc('created_at')->simplePaginate(4)]);
+        return view('admin.pages.lead.index', ['leads' => Lead::select()->orderByDesc('created_at')->simplePaginate(4)]);
     }
 
     public function store(StoreLeadRequest $request)
@@ -37,7 +37,7 @@ class LeadController extends Controller
     {
         $request->validate(['name' => 'required']);
         $leads = Lead::where('name_lead','LIKE', $request->name.'%')->simplePaginate(5);
-        return view('admin.pages.lead.index', ['MyUserPhoto' => 0,'leads' => $leads]);
+        return view('admin.pages.lead.index', ['leads' => $leads]);
     }
     public function show($id){
         return redirect()->route('leads.index');
