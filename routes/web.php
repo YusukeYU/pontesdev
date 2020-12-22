@@ -33,6 +33,11 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
     Route::post('/dashboard/profile/photo', ['uses' => 'UserController@setPhoto'])->name('user_set_photo')->middleware('auth');
 
     Route::get('/dashboard/profile/photo/delete', ['uses' => 'UserController@deletePhoto'])->middleware('auth');
+
+    Route::get('/dashboard/profile/password', ['uses' => 'UserController@password'])->middleware('auth');
+
+    Route::post('/dashboard/profile/password', ['uses' => 'UserController@setPassword'])->name('user_set_password')->middleware('auth');
+    
 });
 
 /**
@@ -55,4 +60,5 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
     Route::post('/dashboard/users/find', ['uses' => 'UserController@find'])->name('find-user')->middleware('auth');
     Route::post('/dashboard/leads/find', ['uses' => 'LeadController@find'])->name('find-lead')->middleware('auth');
     Route::post('/dashboard/services/find', ['uses' => 'ServiceController@find'])->name('find-service')->middleware('auth');
+    Route::post('/dashboard/clients/find', ['uses' => 'ClientController@find'])->name('find-client')->middleware('auth');
 });

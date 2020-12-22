@@ -16,7 +16,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
-    <link rel= "shortcut icon" href= "https://pontesdev.com.br/index.php/assets/img/favicon.ico" type= "image/x-icon">
+    <link rel= "shortcut icon" href="{{ asset('assets/img/favicon.ico')}}"  type= "image/x-icon"}}>
 </head>
 
 <body id="page-top">

@@ -7,9 +7,10 @@ use App\Models\Lead;
 use App\Http\Requests\User\EditUserRequest;
 use App\Http\Requests\User\StoreUserRequest;
 use App\Http\Requests\User\SetPhotoRequest;
+use App\Http\Requests\User\ChangePasswordRequest;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
-
+use Illuminate\Support\Facades\Hash;
 
 
 class UserController extends Controller
@@ -86,27 +87,18 @@ class UserController extends Controller
 
     public function setPhoto(SetPhotoRequest $request)
     {
-        /*
-        Salvar Imagem
-        */
         $image = $request->file('img');
         $filename = $image->getClientOriginalName();
+        $filename =  'user-'.auth()->user()->id_user.$filename;
         $image_resize = Image::make($image->getRealPath());
         $destinationPath = public_path('assets\img\avatars');
-        $image_resize->save($destinationPath . '/' . $filename);
-        /*
-        Imagem Salva
-        */
-
-        /*
-        Atualizar nome da imagem no banco
-        */
         $user = User::find(auth()->user()->id_user);
         if($user->photo_user != 'default.png'){
             unlink($destinationPath .'/'. $user->photo_user);
         }
+        $image_resize->save($destinationPath . '/' . $filename); 
         $user->photo_user = $filename;
-        $user->save();
+        $user->save(); 
         return redirect()->route('main');
     }
 
@@ -119,5 +111,28 @@ class UserController extends Controller
         $user->photo_user = "default.png";
         $user->save();
         return redirect()->route('main');
+    }
+    public function password () {
+        return view('admin.pages.profile.password');
+    }
+
+    public function setPassword (ChangePasswordRequest $request) {
+        $user = User::find(auth()->user()->id_user);
+        if($request->newPassword1 != $request->newPassword2){
+            $request->session()->now('alert-danger', 'Senhas novas inseridas não são iguais.');
+            return view('admin.pages.profile.password');
+        }
+        else if(Hash::check($request->currentPassword, $user->password_user)){
+            $user->password_user = Hash::make($request->newPassword1);
+            $user->save();
+            $request->session()->now('alert-success', 'Dados alterados com sucesso.');
+            return view('admin.pages.profile.password');
+        }
+        else {
+            $request->session()->now('alert-danger', 'Senha atual incorreta.');
+            return view('admin.pages.profile.password');
+        }
+      
+        
     }
 }

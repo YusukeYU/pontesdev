@@ -3,7 +3,7 @@
     <div class="container-fluid">
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Clientes</h1>
-            <form action="{{ route('find-user') }}" method="POST">
+            <form action="{{ route('find-client') }}" method="POST">
                 <input placeholder="Pesquise um nome..."  type="text" name="name" id='name' class="inputsx2 archs"
                 maxlength="50">
                 @csrf
@@ -45,7 +45,7 @@
                                     <td>{{ $client->cpf_client }}</td>
                                     @if(auth()->user()->admin_user == 1)
                                     <td>
-                                        <form action="{{ route('users.destroy', $client->id_client) }}" method="POST">
+                                        <form action="{{ route('clients.destroy', $client->id_client) }}" method="POST">
                                             @method('DELETE')
                                             @csrf
                                             <button type="submit" class="btn btn-danger btn-circle btn-sm">
@@ -54,7 +54,7 @@
                                         </form>
                                     </td>
                                     <td>
-                                        <form action="{{ route('users.edit', $client->id_client) }}" method="GET">
+                                        <form action="{{ route('clients.edit', $client->id_client) }}" method="GET">
                                             @csrf
                                             <button type="submit" class="btn btn-info btn-circle btn-sm">
                                                 <i class="fas fa-info-circle"></i>

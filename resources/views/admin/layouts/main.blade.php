@@ -20,7 +20,7 @@
     <!-- Custom styles for this template-->
     <link href="{{asset('css/sb-admin-2.min.css')}}" type="text/css" rel="stylesheet">
     <link href="{{asset('css/pessoal.css')}}" rel="stylesheet" type="text/css">
-
+    <link rel= "shortcut icon" href="{{ asset('assets/img/favicon.ico')}}"  type= "image/x-icon"}}>
 
 </head>
 <div id ="loading-image" class="div-656587">

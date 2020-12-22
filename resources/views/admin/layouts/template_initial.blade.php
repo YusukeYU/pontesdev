@@ -15,6 +15,7 @@
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
     <link href="css/pessoal.css" rel="stylesheet" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel= "shortcut icon" href="{{ asset('assets/img/favicon.ico')}}"  type= "image/x-icon"}}>
 </head>
 
 <div class="div-656587">
