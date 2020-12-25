@@ -5,6 +5,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\LeadController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\MovimentationController;
 
 
 /**
@@ -18,7 +19,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
         return view('admin.pages.startPages.login');
     })->name('login');
     Route::get('/test',  function () {
-         //User::factory()->count(30)->create();    
+        // Movimentation::factory()->count(20)->create();    
     });
     Route::post('/login', ['uses' => 'LoginController@authenticate']);
 
@@ -51,6 +52,8 @@ Route::resource('/dashboard/leads', LeadController::class);
 Route::resource('/dashboard/services', ServiceController::class)->middleware('auth');
 
 Route::resource('/dashboard/clients', ClientController::class)->middleware('auth');
+
+Route::resource('/dashboard/movimentations', MovimentationController::class)->middleware('auth');
 
 
 /**

@@ -128,10 +128,8 @@
                 <div id="collapsePages4" class="collapse" aria-labelledby="headingPages"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="/admin/movimentation-last">Últimas movimentações</a>
-                        <a class="collapse-item" href="/admin/movimentation">Todas movimentações</a>
-                        <a class="collapse-item" href="/admin/movimentation-month">Movimentações/Mês</a>
-                        <a class="collapse-item" href="/admin/movimentation-add">Nova movimentação</a>
+                        <a class="collapse-item" href="/dashboard/movimentations">Todas movimentações</a>
+                        <a class="collapse-item" href="/dashboard/movimentations/create">Nova movimentação</a>
                     </div>
                 </div>
             </li>
