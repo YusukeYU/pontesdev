@@ -6,7 +6,8 @@ use App\Http\Controllers\LeadController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\MovimentationController;
-
+use App\Http\Controllers\TaskController;
+use App\Models\Client;
 
 /**
  * Rotas Principais
@@ -19,7 +20,8 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
         return view('admin.pages.startPages.login');
     })->name('login');
     Route::get('/test',  function () {
-        // Movimentation::factory()->count(20)->create();    
+        Client::factory()->count(200)->create(); 
+
     });
     Route::post('/login', ['uses' => 'LoginController@authenticate']);
 
@@ -38,6 +40,10 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
     Route::get('/dashboard/profile/password', ['uses' => 'UserController@password'])->middleware('auth');
 
     Route::post('/dashboard/profile/password', ['uses' => 'UserController@setPassword'])->name('user_set_password')->middleware('auth');
+
+    Route::post('/dashboard/tasks/complete', ['uses' => 'TaskController@complete'])->name('complete-task')->middleware('auth');
+
+    Route::get('/dashboard/tasks/pending', ['uses' => 'TaskController@pending'])->name('pending-task')->middleware('auth');
     
 });
 
@@ -55,6 +61,10 @@ Route::resource('/dashboard/clients', ClientController::class)->middleware('auth
 
 Route::resource('/dashboard/movimentations', MovimentationController::class)->middleware('auth');
 
+Route::resource('/dashboard/tasks', TaskController::class)->middleware('auth');
+
+
+
 
 /**
  * Rotas Para pesquisas alternativas por nome.
@@ -64,4 +74,5 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
     Route::post('/dashboard/leads/find', ['uses' => 'LeadController@find'])->name('find-lead')->middleware('auth');
     Route::post('/dashboard/services/find', ['uses' => 'ServiceController@find'])->name('find-service')->middleware('auth');
     Route::post('/dashboard/clients/find', ['uses' => 'ClientController@find'])->name('find-client')->middleware('auth');
+    Route::post('/dashboard/tasks/find', ['uses' => 'TaskController@find'])->name('find-task')->middleware('auth');
 });

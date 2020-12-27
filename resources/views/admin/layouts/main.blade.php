@@ -78,8 +78,8 @@
                 </a>
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="/dashboard/services">Serviços cadastrados</a>
-                        <a class="collapse-item" href="/dashboard/services/create">Cadastrar serviço</a>
+                        <a class="collapse-item" href="/dashboard/services">Todos serviços</a>
+                        <a class="collapse-item" href="/dashboard/services/create">Novo serviço</a>
                     </div>
                 </div>
             </li>
@@ -94,11 +94,9 @@
                 <div id="collapsePages2" class="collapse" aria-labelledby="headingPages"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="/admin/tasks">Tarefas de hoje</a>
-                        <a class="collapse-item" href="/admin/tasks-pending">Tarefas pendentes</a>
-                        <a class="collapse-item" href="/admin/tasks-complete">Tarefas completas</a>
-                        <a class="collapse-item" href="/admin/tasks-all">Todas as tarefas</a>
-                        <a class="collapse-item" href="/admin/tasks-add">Cadastrar tarefa</a>
+                        <a class="collapse-item" href="/dashboard/tasks/pending">Tarefas pendentes</a>
+                        <a class="collapse-item" href="/dashboard/tasks">Todas tarefas</a>
+                        <a class="collapse-item" href="/dashboard/tasks/create">Nova tarefa</a>
                     </div>
                 </div>
             </li>
@@ -113,7 +111,7 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="/dashboard/clients">Todos os clientes</a>
-                        <a class="collapse-item" href="/dashboard/clients/create">Cadastrar cliente</a>
+                        <a class="collapse-item" href="/dashboard/clients/create">Novo cliente</a>
                     </div>
                 </div>
             </li>
@@ -248,6 +246,7 @@
         <!-- Custom scripts for all pages-->
         <script src="{{asset('js/sb-admin-2.min.js')}}"></script> 
         <script src="{{asset('js/main.js')}}"></script> 
+        <script src="https://use.fontawesome.com/7c0ba3632b.js"></script>
 
 
 

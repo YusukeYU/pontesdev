@@ -16,7 +16,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
-    <link rel= "shortcut icon" href="{{ asset('assets/img/favicon.ico')}}"  type= "image/x-icon"}}>
+    <link rel="shortcut icon" href="{{ asset('assets/img/favicon.ico') }}" type="image/x-icon" }}>
 </head>
 
 <body id="page-top">
@@ -103,9 +103,13 @@
                         <img class="mx-auto rounded-circle" src="assets/img/me.jpg" alt="" />
                         <h4>Gustavo Oliveira Pontes</h4>
                         <p class="text-muted">Desenvolvedor Júnior</p>
-                        <a class="btn btn-dark btn-social mx-2" href="https://github.com/YusukeYu"><i class="fab fa-github"></i></a>
-                        <a class="btn btn-dark btn-social mx-2" href="https://api.whatsapp.com/send?phone=5513981517557&text=Ol%C3%A1%2C%20Gostaria%20de%20um%20or%C3%A7amento%20para%20um%20website!"><i class="fab fa-whatsapp"></i></a>
-                        <a class="btn btn-dark btn-social mx-2" href="https://www.linkedin.com/in/gop11/"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="https://github.com/YusukeYu"><i
+                                class="fab fa-github"></i></a>
+                        <a class="btn btn-dark btn-social mx-2"
+                            href="https://api.whatsapp.com/send?phone=5513981517557&text=Ol%C3%A1%2C%20Gostaria%20de%20um%20or%C3%A7amento%20para%20um%20website!"><i
+                                class="fab fa-whatsapp"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="https://www.linkedin.com/in/gop11/"><i
+                                class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
             </div>
@@ -147,7 +151,7 @@
                 <h3 class="section-subheading text-muted">Envie sua dúvida ou solicitação de orçamento!</h3>
             </div>
             <form id="contactForm">
-              @csrf 
+                @csrf
                 <div class="row align-items-stretch mb-5">
                     <div class="col-md-6">
                         <div class="form-group">
@@ -157,20 +161,20 @@
                         </div>
                         <div class="form-group">
                             <input class="form-control" id="email" name="email" type="email" placeholder="Seu E-mail *"
-                                required="required"
-                                data-validation-required-message="Por favor, digite seu e-mail." />
+                                required="required" data-validation-required-message="Por favor, digite seu e-mail." />
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="form-group mb-md-0">
-                            <input name="phone" class="form-control" id="telefone" type="tel" placeholder="Seu Telefone *"
-                                required="required"
+                            <input name="phone" class="form-control" id="telefone" type="tel"
+                                placeholder="Seu Telefone *" required="required"
                                 data-validation-required-message="Por favor, digite seu telefone." />
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group form-group-textarea mb-md-0">
-                            <textarea name="msg" maxlength="40" class="form-control" id="msg" placeholder="Sua Mensagem *" required="required"
+                            <textarea name="msg" maxlength="40" class="form-control" id="msg"
+                                placeholder="Sua Mensagem *" required="required"
                                 data-validation-required-message="Por favor digite sua mensagem."></textarea>
                             <p class="help-block text-danger"></p>
                         </div>
@@ -181,7 +185,7 @@
                     <button class="btn btn-primary btn-xl text-uppercase" id="submit" type="submit">Enviar
                         Mensagem</button>
                 </div>
-               
+
             </form>
         </div>
     </section>
@@ -191,16 +195,20 @@
             <div class="row align-items-center">
                 <div class="col-lg-4 text-lg-left">Copyright © Pontes Desenvolvimento 2020</div>
                 <div class="col-lg-4 my-3 my-lg-0">
-                    <a class="btn btn-dark btn-social mx-2" href="https://github.com/YusukeYu"><i class="fab fa-github"></i></a>
-                    <a class="btn btn-dark btn-social mx-2" href="https://api.whatsapp.com/send?phone=5513981517557&text=Ol%C3%A1%2C%20Gostaria%20de%20um%20or%C3%A7amento%20para%20um%20website!"><i class="fab fa-whatsapp"></i></a>
-                    <a class="btn btn-dark btn-social mx-2" href="https://www.linkedin.com/in/gop11/"><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-dark btn-social mx-2" href="https://github.com/YusukeYu"><i
+                            class="fab fa-github"></i></a>
+                    <a class="btn btn-dark btn-social mx-2"
+                        href="https://api.whatsapp.com/send?phone=5513981517557&text=Ol%C3%A1%2C%20Gostaria%20de%20um%20or%C3%A7amento%20para%20um%20website!"><i
+                            class="fab fa-whatsapp"></i></a>
+                    <a class="btn btn-dark btn-social mx-2" href="https://www.linkedin.com/in/gop11/"><i
+                            class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
         </div>
     </footer>
     <!-- Portfolio Modals-->
     <!-- Modal 1-->
-   
+
     <!-- Bootstrap core JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
