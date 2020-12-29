@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Client;
 use App\Http\Requests\Client\EditClientRequest;
+use App\Models\ClientTask;
+use App\Models\Task;
+
 class ClientController extends Controller
 {
     public function index()
@@ -55,6 +58,16 @@ class ClientController extends Controller
     {
         if (auth()->user()->admin_user == 1) {
             Client::destroy($id);
+            $clients = ClientTask::where('id_client_client_task', $id)->get();
+            foreach ($clients as $client) {
+                ClientTask::destroy($client->id_client_task);
+            }
+            $tasks = Task::where('client_task', $id)->get();
+            foreach ($tasks as $task) {
+                $task2 = Task::find($task->id_task);
+                $task2->client_task = null;
+                $task2->save();
+            }
         }
         return redirect()->route('clients.index');
     }
@@ -63,5 +76,9 @@ class ClientController extends Controller
         $request->validate(['name' => 'required']);
         $clients = Client::where('name_client', 'LIKE', $request->name . '%')->simplePaginate(4);
         return view('admin.pages.client.index', ['clients' => $clients]);
+    }
+    public function findHistory(Request $request){
+        $histories = ClientTask::findThisClient($request->id);
+        return view('admin.pages.client.history', ['histories' => $histories]); ;
     }
 }

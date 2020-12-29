@@ -3,10 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\Task\EditTaskRequest;
+use App\Http\Requests\Task\StoreTaskRequest;
 use Illuminate\Http\Request;
 use App\Models\Task;
 use App\Models\Service;
 use App\Models\Client;
+use App\Models\Movimentation;
+use App\Models\ClientTask;
 
 class TaskController extends Controller
 {
@@ -15,25 +18,21 @@ class TaskController extends Controller
         return view('admin.pages.task.index', ['tasks' => Task::Tasks()]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        return view('admin.pages.task.create', ['clients' => Client::select()->orderBy('name_client')->get(), 'services' => Service::select()->orderBy('name_service')->get()]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function store(StoreTaskRequest $request)
     {
-        //
+        $task = new Task();
+        $task->name_task = $request->name;
+        $task->description_task = $request->description;
+        $task->status_task = 0;
+        $task->service_task = (int)$request->service;
+        $task->client_task = (int)$request->client;
+        $task->save();
+        return redirect()->route('tasks.index');
     }
 
     public function show($id)
@@ -53,12 +52,6 @@ class TaskController extends Controller
         return view('admin.pages.task.index', ['tasks' => $tasks]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         return view('admin.pages.task.edit', ['clients' => Client::select()->orderBy('name_client')->get(), 'services' => Service::select()->orderBy('name_service')->get(), 'task' => Task::findTask($id)]);
@@ -69,18 +62,36 @@ class TaskController extends Controller
         $task = Task::find($id);
         $task->name_task = $request->name;
         $task->description_task = $request->description;
-        $task->status_task = (int)$request->status;
         $task->service_task = (int)$request->service;
         $task->client_task = (int)$request->client;
-        $task->created_at = $request->date.$request->hour2;
+        $task->created_at = $request->date . $request->hour2;
         $task->save();
         return redirect()->route('tasks.index');
     }
     public function complete(Request $request)
     {
+
         $task = Task::find($request->id);
-        $task->status_task = 1;
-        $task->save();
+        if (!$task->status_task == 1) {
+            $task->status_task = 1;
+            if (!$task->service_task == null && $task->service_task > 0) {
+                $service = Service::find((int)$task->service_task);
+                $movimentation = new Movimentation();
+                $movimentation->type_movimentation = 1;
+                $movimentation->value_movimentation =  $service->price_service;
+                $movimentation->description_movimentation = 'Serviço realizado : ' . $service->name_service;
+                $movimentation->id_task_movimentation = (int)$request->id;
+                $movimentation->save();
+            }
+            if (!$task->client_task == null && $task->client_task > 0) {
+               $client_task = new ClientTask();
+               $client_task->id_task_client_task = $request->id;
+               $client_task->id_client_client_task = $task->client_task;
+               $client_task->save();
+
+            }
+            $task->save();
+        }
         return redirect()->route('tasks.index');
     }
 

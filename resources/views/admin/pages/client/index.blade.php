@@ -29,7 +29,9 @@
                                 <th>E-mail</th>
                                 <th>Telefone</th>
                                 <th>Cpf</th>
-                                @if(auth()->user()->admin_user == 1)
+                                <th> </th>
+                                @if(auth()->user()->admin_user == 1),
+                                <th> </th>
                                 <th> </th>
                                 <th> </th>
                                 @endif
@@ -54,14 +56,30 @@
                                         </form>
                                     </td>
                                     <td>
+                                            <a style= "color: #fff;"data-toggle="modal" data-target={{ '#infoModalss' . $client->id_client }} class="btn btn-info btn-circle btn-sm">
+                                                <i class="fas fa-info-circle"></i>
+                                            </a>
+                                    </td>
+                                    <td>
                                         <form action="{{ route('clients.edit', $client->id_client) }}" method="GET">
                                             @csrf
-                                            <button type="submit" class="btn btn-info btn-circle btn-sm">
-                                                <i class="fas fa-info-circle"></i>
+                                            <button style = "background-color: #e74a3b;
+                                            border-color: #e74a3b; " type="submit" class="btn btn-info btn-circle btn-sm">
+                                                <i class="fa fa-pencil"></i>
                                             </button>
                                         </form>
                                     </td>
                                     @endif
+                                    <td>
+                                        <form action="{{ route('find-history') }}" method="POST">
+                                            @csrf
+                                            <input name="id" type="hidden" value="{{ $client->id_client }}">
+                                            <button style="background-color: green; border:none" type="submit" class="btn btn-info btn-circle btn-sm">
+                                                <i class="fa fa-id-card-o"></i>
+                                            </button>
+                                        </form>
+                                    </td>
+                                   
                                 </tr>
                             @endforeach
                         </tbody>

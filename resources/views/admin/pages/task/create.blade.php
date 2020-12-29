@@ -9,56 +9,40 @@
         </div>
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Editar Tarefa</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Nova Tarefa</h6>
             </div>
             <div class="card-body">
                 <div class="form-group" style="padding-left: 1.25rem; padding-top: 1rem;">
-                    <form action="{{ route('tasks.update', $task[0]->id_task) }}" id="data" class="form" method="POST">
-                        @method('PUT')
+                    <form action="{{ route('tasks.store') }}" id="data" class="form" method="POST">
                         @csrf
-                        <input type="hidden" name="id" value="{{ $task[0]->id_task }}">
+
                         <h6 class="m-0 font-weight-bold text-primary">Nome</h6>
-                        <input type="text" name="name" class="inputsx2" maxlength="40" value="{{ $task[0]->name_task }}">
-        
+                        <input type="text" name="name" class="inputsx2" maxlength="40" value="{{ old('name') }}">
+
+
                         <h6 class="m-0 font-weight-bold text-primary">Data</h6>
-                        <input type="date" name="date" class="inputsx2" value="{{ substr($task[0]->created_at, 0, -9) }}">
+                        <input type="date" name="date" class="inputsx2" value="{{ old('date') }}">
 
                         <h6 class="m-0 font-weight-bold text-primary">Horário</h6>
-                        <input type="time" name="hour2" class="inputsx2" value="{{ substr($task[0]->created_at, 11,5) }}">
+                        <input type="time" name="hour2" class="inputsx2" value="{{ old('hour2')}}">
 
                         <h6 class="m-0 font-weight-bold text-primary">Descrição</h6>
-                        <input type="text" name="description" class="inputsx2" value="{{ $task[0]->description_task ?? '' }}">
+                        <input type="text" name="description" class="inputsx2" value="{{ old('description') }}">
 
                         <h6 class="m-0 font-weight-bold text-primary">Serviço</h6>
-                        <select class="inputsx2" name="service" @if($task[0]->status_task==1)disabled @endif>
-                            @if (isset($task[0]->service_task))
-                                <option value="{{ $task[0]->service_task }}">{{ $task[0]->name_service }}</option>
+                        <select class="inputsx2" name="service">
                                 <option value=""> </option>
                                 @foreach ($services as $service)
                                     <option value="{{ $service->id_service }}">{{ $service->name_service }}</option>
                                 @endforeach
-                            @else
-                                <option value=""> </option>
-                                @foreach ($services as $service)
-                                    <option value="{{ $service->id_service }}">{{ $service->name_service }}</option>
-                                @endforeach
-                            @endif
                         </select>
 
-                        <h6 class="m-0 font-weight-bold text-primary" >Cliente</h6>
-                        <select  class="inputsx2" name="client" @if($task[0]->status_task==1)disabled @endif >
-                            @if (isset($task[0]->client_task) && $task[0]->client_task != 0)
-                                <option value="{{ $task[0]->client_task }}">{{ $task[0]->name_client.'/ CPF : '.$task[0]->cpf_client }}</option>
-                                <option value=""> </option>
-                                @foreach ($clients as $client)
-                                    <option value="{{ $client->id_client }}">{{ $client->name_client.'/ CPF : '.$client->cpf_client }}</option>
-                                @endforeach
-                            @else
+                        <h6 class="m-0 font-weight-bold text-primary">Cliente</h6>
+                        <select  class="inputsx2" name="client">
                                 <option value=""> </option>
                                 @foreach ($clients as $client)
                                 <option value="{{ $client->id_client }}">{{ $client->name_client.'/ CPF : '.$client->cpf_client }}</option>
                                 @endforeach
-                            @endif
                         </select>
                 
 

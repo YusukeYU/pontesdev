@@ -7,7 +7,8 @@ use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\MovimentationController;
 use App\Http\Controllers\TaskController;
-use App\Models\Client;
+use App\Models\ClientTask;
+
 
 /**
  * Rotas Principais
@@ -20,8 +21,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
         return view('admin.pages.startPages.login');
     })->name('login');
     Route::get('/test',  function () {
-        Client::factory()->count(200)->create(); 
-
+       
     });
     Route::post('/login', ['uses' => 'LoginController@authenticate']);
 
@@ -75,4 +75,5 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
     Route::post('/dashboard/services/find', ['uses' => 'ServiceController@find'])->name('find-service')->middleware('auth');
     Route::post('/dashboard/clients/find', ['uses' => 'ClientController@find'])->name('find-client')->middleware('auth');
     Route::post('/dashboard/tasks/find', ['uses' => 'TaskController@find'])->name('find-task')->middleware('auth');
+    Route::post('/dashboard/clients/find/history', ['uses' => 'ClientController@findHistory'])->name('find-history')->middleware('auth');
 });
