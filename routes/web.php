@@ -7,7 +7,7 @@ use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\MovimentationController;
 use App\Http\Controllers\TaskController;
-use App\Models\ClientTask;
+use Illuminate\Support\Facades\Auth;
 
 
 /**
@@ -18,7 +18,11 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
         return view('admin.pages.startPages.index');
     })->name('pontesdev');
     Route::get('/login',  function () {
-        return view('admin.pages.startPages.login');
+        if (Auth::check()) {
+            return redirect()->route('main');
+        } else {
+            return view('admin.pages.startPages.login');
+        }      
     })->name('login');
     Route::get('/test',  function () {
        

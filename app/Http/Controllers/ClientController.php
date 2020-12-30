@@ -74,7 +74,7 @@ class ClientController extends Controller
     public function find(Request $request)
     {
         $request->validate(['name' => 'required']);
-        $clients = Client::where('name_client', 'LIKE', $request->name . '%')->simplePaginate(4);
+        $clients = Client::where('name_client', 'LIKE', $request->name . '%')->get();
         return view('admin.pages.client.index', ['clients' => $clients]);
     }
     public function findHistory(Request $request){

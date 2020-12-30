@@ -74,8 +74,10 @@
             </div>
         </div>
     </div>
+    @if ($users instanceof \Illuminate\Pagination\AbstractPaginator)
     <div style="text-align: center" class="x65321">
         <div class="col-md-auto">{{ $users->links() }}</div>
     </div>
+    @endif
 
 @endsection

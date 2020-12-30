@@ -30,8 +30,7 @@
                                 <th>Telefone</th>
                                 <th>Cpf</th>
                                 <th> </th>
-                                @if(auth()->user()->admin_user == 1),
-                                <th> </th>
+                                @if(auth()->user()->admin_user == 1)
                                 <th> </th>
                                 <th> </th>
                                 @endif
@@ -54,11 +53,6 @@
                                                 <i class="fas fa-trash"></i>
                                             </button>
                                         </form>
-                                    </td>
-                                    <td>
-                                            <a style= "color: #fff;"data-toggle="modal" data-target={{ '#infoModalss' . $client->id_client }} class="btn btn-info btn-circle btn-sm">
-                                                <i class="fas fa-info-circle"></i>
-                                            </a>
                                     </td>
                                     <td>
                                         <form action="{{ route('clients.edit', $client->id_client) }}" method="GET">
@@ -89,7 +83,12 @@
         </div>
     </div>
     <div style="text-align: center" class="x65321">
+
+        @if($clients instanceof \Illuminate\Pagination\AbstractPaginator)
+
         <div class="col-md-auto">{{ $clients->links() }}</div>
+
+        @endif
     </div>
 
 @endsection

@@ -28,7 +28,7 @@
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="assets/img/logo.png" alt="" /></a>
+            <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="assets/img/pontesdev.png" alt="" /></a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
                 data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -40,7 +40,7 @@
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#services">Serviços</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#sobre">Sobre Mim</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contato</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/login">Área Restrita</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" target="_blank" href="/login">Área Restrita</a></li>
                 </ul>
             </div>
         </div>
@@ -49,7 +49,7 @@
     <header class="masthead">
         <div class="container">
             <div class="masthead-subheading">Bem vindo!</div>
-            <div class="masthead-heading text-uppercase">Pontes Desenvolvimento</div>
+             <h1 class="masthead-heading text-uppercase"> Pontes Desenvolvimento</h1>
             <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Quero saber mais!</a>
         </div>
     </header>
@@ -58,7 +58,7 @@
         <div class="container">
             <div class="text-center">
                 <h2 class="section-heading text-uppercase">Serviços</h2>
-                <h3 class="section-subheading text-muted">Conheça todos os serviços que podemos oferecer.</h3>
+                <h3 class="section-subheading text-muted">A <strong>Pontes Desenvolvimento</strong> oferece serviços desde, criação de páginas de venda, artes de divulgação, logos para sua empresa, sistemas de gestão empresarial e sites personalizados.</h3>
             </div>
             <div class="row text-center">
                 <div class="col-md-4">
@@ -66,26 +66,27 @@
                         <i class="fas fa-circle fa-stack-2x text-primary"></i>
                         <i class="fas fa-user fa-stack-1x fa-inverse"></i>
                     </span>
-                    <h4 class="my-3">Encomende um Website</h4>
-                    <p class="text-muted">Impulsione seu negócio através de um website profissional. Pensou em
-                        desenvolvimento de sites, responsividade ou banco de dados está no lugar certo!</p>
+                    <h2 class="my-3">Site Personalizado</h2>
+                    <p class="text-muted"><strong>Sites personalizados</strong> para vendas são a melhor maneira de divulgação para serviços, produtos, cursos e etc. 
+                        Encomende agora sua página de venda com alto poder de conversão e um ótimo custo benefício.</p>
                 </div>
                 <div class="col-md-4">
                     <span class="fa-stack fa-4x">
                         <i class="fas fa-circle fa-stack-2x text-primary"></i>
                         <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
                     </span>
-                    <h4 class="my-3">Artes Personalizadas</h4>
-                    <p class="text-muted">Adquira um logo, ou uma arte a fim de melhorar sua comunicação com seus
-                        respectivos clientes. </p>
+                    <h2 class="my-3">Sistema de Gestão</h2>
+                    <p class="text-muted">Que tal ganhar produtividade com ajuda da <strong>Pontes Desenvolvimento</strong>? Adquira um <strong> Sistema de Gestão</strong> de qualidade, fácil de usar e que 
+                        caiba no seu orçamento. Gerencie clientes, histórico de atendimento, leads, fluxo de caixa, agenda e etc. </p>
                 </div>
                 <div class="col-md-4">
                     <span class="fa-stack fa-4x">
                         <i class="fas fa-circle fa-stack-2x text-primary"></i>
                         <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
                     </span>
-                    <h4 class="my-3">Web Segurança</h4>
-                    <p class="text-muted">Websites seguros, utilizando boas práticas de segurança.</p>
+                    <h2 class="my-3">Customização de Website</h2>
+                    <p class="text-muted">
+                        Precisa de ajustes, correções ou melhorias no seu ranqueamento SEO?Contate-nos e faça um orçamento, impulsione já seu site personalizado!</p>
                 </div>
             </div>
         </div>
@@ -95,13 +96,13 @@
         <div class="container">
             <div class="text-center">
                 <h2 class="section-heading text-uppercase">Equipe</h2>
-                <h3 class="section-subheading text-muted">Atualmente a equipe é formada por somente um membro.</h3>
+                <h3 class="section-subheading text-muted">Atualmente a <strong> Pontes Desenvolvimento </strong> é formada por somente um membro.</h3>
             </div>
             <div class="row">
                 <div class="col-lg-4 x6598">
                     <div class="team-member">
-                        <img class="mx-auto rounded-circle" src="assets/img/me.jpg" alt="" />
-                        <h4>Gustavo Oliveira Pontes</h4>
+                        <img class="mx-auto rounded-circle" src="assets/img/Gustavo-Pontes.jpg" alt="" />
+                        <h2>Gustavo Pontes</h2>
                         <p class="text-muted">Desenvolvedor Júnior</p>
                         <a class="btn btn-dark btn-social mx-2" href="https://github.com/YusukeYu"><i
                                 class="fab fa-github"></i></a>
@@ -115,8 +116,8 @@
             </div>
             <div class="row">
                 <div class="col-lg-8 mx-auto text-center">
-                    <p class="large text-muted">Sou um desenvolvedor júnior apaixonado por construção de
-                        websites/sistemas, aprimorando a comunição entre negócios e seus respectivos clientes.</p>
+                    <p class="large text-muted">Olá! Me chamo <strong>Gustavo Pontes</strong>, sou um desenvolvedor júnior de sites personalizados e sistemas de gestão.
+                        Sempre fui apaixonado por tecnologia, hoje meu objetivo é sempre melhorar o dia a dia do meu cliente, aprimorando a comunicação do seu negócio e sua produtividade.</p>
                 </div>
             </div>
         </div>

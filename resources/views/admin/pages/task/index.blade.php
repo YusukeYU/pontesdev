@@ -141,9 +141,10 @@
             </div>
         </div>
     </div>
-
+    @if ($tasks instanceof \Illuminate\Pagination\AbstractPaginator)
     <div style="text-align: center" class="x65321">
         <div class="col-md-auto">{{ $tasks->links() }}</div>
     </div>
+    @endif
 
 @endsection
